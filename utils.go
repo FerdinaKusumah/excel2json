@@ -3,6 +3,7 @@ package main
 import "strings"
 
 // mapHeaders Convert all headers to map string
+// headers is array string
 func mapHeaders(headers []string) map[string]string {
 	var result = make(map[string]string)
 	for _, val := range headers {
