@@ -1,4 +1,4 @@
-package excel2json
+package main
 
 import (
 	"fmt"
