@@ -1,7 +1,7 @@
 package excel2json
 
 // GetFileUrl to read all data excel
-// url is string uri
+// url is string url file name
 // sheetName is sheet name in excel file
 func GetFileUrl(url, sheetName string) ([]map[string]interface{}, error) {
 	var (
