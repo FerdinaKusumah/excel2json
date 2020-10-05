@@ -12,17 +12,22 @@ func mapHeaders(headers []string) map[string]string {
 	return result
 }
 
-// Filtering data based on selected header
-func filterDataHeaders(mapHeader map[string]string, data []map[string]interface{}) []map[string]interface{} {
-	var result []map[string]interface{}
+// filterDataHeaders data based on selected header
+// mapHeader is headers that already mapped
+// data is data that is already fetch from excel file
+func filterDataHeaders(mapHeader map[string]string, data []*map[string]interface{}) []*map[string]interface{} {
+	var result []*map[string]interface{}
 	for _, val := range data {
-		var t = make(map[string]interface{})
+		var (
+			t = make(map[string]interface{})
+			d = *val
+		)
 		for _, header := range mapHeader {
-			if _, ok := val[header]; ok {
-				t[header] = val[header]
+			if _, ok := d[header]; ok {
+				t[header] = d[header]
 			}
 		}
-		result = append(result, t)
+		result = append(result, &t)
 	}
 	return result
 }
