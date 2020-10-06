@@ -1,6 +1,10 @@
 package excel2json
 
-import "strings"
+import (
+	"crypto/sha1"
+	"encoding/base64"
+	"strings"
+)
 
 // mapHeaders Convert all headers to map string
 // headers is array string
@@ -30,4 +34,12 @@ func filterDataHeaders(mapHeader map[string]string, data []*map[string]interface
 		result = append(result, &t)
 	}
 	return result
+}
+
+// hashKeyString is method to hash keyName
+// keyName is string
+func hashKeyString(keyName string) string {
+	var hashString = sha1.New()
+	hashString.Write([]byte(keyName))
+	return base64.URLEncoding.EncodeToString(hashString.Sum(nil))
 }

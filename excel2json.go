@@ -3,6 +3,7 @@ package excel2json
 import (
 	"fmt"
 	"github.com/patrickmn/go-cache"
+	"strings"
 	"time"
 )
 
@@ -19,8 +20,9 @@ func GetExcelFileUrl(url, sheetName string, headers []string) ([]*map[string]int
 		result   []*map[string]interface{}
 		err      error
 		byteFile []byte
-		keyName  = fmt.Sprintf(`%s||%s`, url, sheetName)
+		keyName  = hashKeyString(fmt.Sprintf(`%s||%s||%s`, url, sheetName, strings.Join(headers, "||")))
 	)
+
 	if byteFile, err = getFileUrl(url); err != nil {
 		return nil, err
 	}
@@ -42,7 +44,7 @@ func GetExcelFilePath(path, sheetName string, headers []string) ([]*map[string]i
 		result   []*map[string]interface{}
 		err      error
 		byteFile []byte
-		keyName  = fmt.Sprintf(`%s||%s`, path, sheetName)
+		keyName  = hashKeyString(fmt.Sprintf(`%s||%s||%s`, path, sheetName, strings.Join(headers, "||")))
 	)
 	if byteFile, err = getFilePath(path); err != nil {
 		return nil, err
@@ -65,7 +67,7 @@ func GetCsvFileUrl(url, delimiter string, headers []string) ([]*map[string]inter
 		result   []*map[string]interface{}
 		err      error
 		byteFile []byte
-		keyName  = fmt.Sprintf(`%s|`, url)
+		keyName  = hashKeyString(fmt.Sprintf(`%s||%s||%s`, url, delimiter, strings.Join(headers, "||")))
 	)
 	if byteFile, err = getFileUrl(url); err != nil {
 		return nil, err
@@ -88,7 +90,7 @@ func GetCsvFilePath(path, delimiter string, headers []string) ([]*map[string]int
 		result   []*map[string]interface{}
 		err      error
 		byteFile []byte
-		keyName  = fmt.Sprintf(`%s|`, path)
+		keyName  = hashKeyString(fmt.Sprintf(`%s||%s||%s`, path, delimiter, strings.Join(headers, "||")))
 	)
 	if byteFile, err = getFilePath(path); err != nil {
 		return nil, err
