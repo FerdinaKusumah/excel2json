@@ -3,7 +3,7 @@
 ## Read excel `xlsx` from remote source
 
 ### Supposed you have excel like this
-![Excel Image](https://raw.githubusercontent.com/narutoxxx/excel2json/master/image/excel_image.png)
+![Excel Image](https://raw.githubusercontent.com/FerdinaKusumah/excel2json/master/image/excel_image.png)
 
 ### Need to convert to this
 ```json
@@ -26,7 +26,7 @@
 import (
     "encoding/json"
 	"fmt"
-	"github.com/narutoxxx/excel2json"
+	"github.com/FerdinaKusumah/excel2json"
 	"log"
 )
 
@@ -56,7 +56,7 @@ func main() {
 import (
     "encoding/json"
 	"fmt"
-	"github.com/narutoxxx/excel2json"
+	"github.com/FerdinaKusumah/excel2json"
 	"log"
 )
 
@@ -82,7 +82,7 @@ func main() {
 ```
 
 ### Supposed you have csv data like this
-![Csv Image](https://raw.githubusercontent.com/narutoxxx/excel2json/master/image/csv_image.png)
+![Csv Image](https://raw.githubusercontent.com/FerdinaKusumah/excel2json/master/image/csv_image.png)
 
 ### Need to convert to this
 ```json
@@ -109,7 +109,7 @@ func main() {
 import (
     "encoding/json"
 	"fmt"
-	"github.com/narutoxxx/excel2json"
+	"github.com/FerdinaKusumah/excel2json"
 	"log"
 )
 
@@ -138,7 +138,7 @@ func main() {
 import (
     "encoding/json"
 	"fmt"
-	"github.com/narutoxxx/excel2json"
+	"github.com/FerdinaKusumah/excel2json"
 	"log"
 )
 
