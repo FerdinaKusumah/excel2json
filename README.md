@@ -1,5 +1,12 @@
 # Convert Excel Or Csv To Json Easily
 
+> **⚠️ Archived: this project is no longer maintained.**
+>
+> It wraps [excelize](https://github.com/qax-os/excelize) v1.4.1 from 2019. Use
+> [excelize v2](https://github.com/qax-os/excelize) (`github.com/xuri/excelize/v2`) directly instead: `GetRows` plus a
+> few lines turn a sheet into JSON. Released versions of this module stay available through the Go module proxy, so
+> existing builds keep working.
+
 ## Read excel `xlsx` from remote source
 
 ### Supposed you have excel like this
